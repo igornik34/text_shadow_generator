@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text shadow generator</title>
+    <link rel="stylesheet" href="public/main.css">
+</head>
+<body class="bg-gray-400 p-16 text-center">
+    <h1 class="tracking-widest uppercase text-black font-extrabold text-3xl my-4">Text shadow generator</h1>
+    <div class="container max-w-screen-xl mx-auto">
+        <div class="cards w-full grid grid-cols-2 md:grid-cols-3 gap-3">
+            <div class="card bg-white rounded">
+                <div class="card-header bg-blue-500 text-center py-4 text-lg font-semibold text-white">Настройки:</div>
+                <div class="card-body flex flex-col p-4">
+                    <label for="font_size">Размер шрифта</label>
+                    <input class="mb-4" type="range" id="font_size" min="8" max="40" step="1" value="40">
+                    <label for="offset_x">Смещение по оси Х</label>
+                    <input class="mb-4" type="range" id="offset_x" min="-15" max="15" step="1" value="4">
+                    <label for="offset_y">Смещение по оси Y</label>
+                    <input class="mb-4" type="range" id="offset_y" min="-15" max="15" step="1" value="-1">
+                    <label for="blur">Размытие</label>
+                    <input type="range" id="blur" min="0" max="15" step="1" value="0">
+                </div>
+            </div>
+            <div class="card bg-white rounded">
+                <div class="card-header bg-blue-500 text-center py-4 text-lg font-semibold text-white">Цвет:</div>
+                <div class="card-body flex flex-col p-4">
+                    <input type="color" id="color" value="#ff0000" class="mx-auto bg-transparent border-none w-14 h-14 p-0 mb-4 hover:cursor-pointer">
+                    <label for="opacity">Прозрачность</label>
+                    <input type="range" id="opacity" min="0" max="1" step="0.01" value="1">
+                </div>
+            </div>
+            <div class="card col-span-2 bg-white rounded md:col-auto">
+                <div class="card-header bg-blue-500 text-center py-4 text-lg font-semibold text-white">Результат:</div>
+                <div class="card-body flex flex-col p-4">
+                    <label for="resultHex">Цвет в HEX</label>
+                    <textarea id="resultHex" rows="4" readonly></textarea>
+                    <label for="resultRgba">Цвет в RGBA</label>
+                    <textarea id="resultRgba" rows="3" readonly></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
